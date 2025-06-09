@@ -36,26 +36,24 @@ const Footer = () => {
           <div>
             <h4 className="font-bold mb-4">Connect With Us</h4>
             <div className="flex space-x-4 mb-4">
-              <a href="https://facebook.com/supcomcybersec" className="text-gray-300 hover:text-cyan-400 transition">
+              <a href="https://www.facebook.com/profile.php?id=61550106362337" className="text-gray-300 hover:text-cyan-400 transition">
                 <FaFacebook size={20} />
               </a>
-              <a href="https://instagram.com/supcomcybersec" className="text-gray-300 hover:text-cyan-400 transition">
+              <a href="https://www.instagram.com/cybersec_supcom/" className="text-gray-300 hover:text-cyan-400 transition">
                 <FaInstagram size={20} />
               </a>
-              <a href="https://linkedin.com/company/supcomcybersec" className="text-gray-300 hover:text-cyan-400 transition">
+              <a href="https://www.linkedin.com/company/92965903/" className="text-gray-300 hover:text-cyan-400 transition">
                 <FaLinkedin size={20} />
               </a>
               <a href="https://github.com/supcomcybersec" className="text-gray-300 hover:text-cyan-400 transition">
                 <FaGithub size={20} />
               </a>
-              <a href="mailto:cybersec@supcom.tn" className="text-gray-300 hover:text-cyan-400 transition">
-                <FaEnvelope size={20} />
-              </a>
+              
             </div>
             <p className="text-gray-300">
               SUPCOM Campus<br />
               City, Country<br />
-              Email: cybersec@supcom.tn
+              <a href="mailto:cybersec@supcom.tn" className="text-gray-300 hover:text-cyan-400 transition"><FaEnvelope size={20} /></a>Email: cybersec@supcom.tn
             </p>
           </div>
         </div>

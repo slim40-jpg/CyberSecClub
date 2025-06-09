@@ -1,4 +1,4 @@
-export const members = [
+const members = [
   {
     id: 1,
     name: "Slim Selmi",
@@ -112,9 +112,9 @@ export const members = [
   }
 ];
 
-/* Export the complete list
+/* Export the complete list */
 export default members;
-*/
+
 // Helper functions to filter by position
 export const getByPosition = (position) => members.filter(member => member.position === position);
 export const getLeadershipTeam = () => members.filter(member => 

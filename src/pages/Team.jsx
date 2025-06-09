@@ -1,49 +1,17 @@
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaBehance } from 'react-icons/fa';
-import members, { 
-  getLeadershipTeam, 
+import { 
+  FaLinkedin, 
+  FaGithub, 
+  FaTwitter, 
+  FaInstagram 
+} from 'react-icons/fa';
+
+import members from '../data/members';
+import {
+  getLeadershipTeam,
   getTechnicalTeam,
   getAdministrativeTeam,
-  getMarketingTeam 
+  getMarketingTeam
 } from '../data/members';
-
-const TeamPage = () => {
-  return (
-    <div className="bg-gray-900 text-white min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-16">
-          Our <span className="text-cyan-400">Team</span>
-        </h1>
-        
-        {/* Leadership Team */}
-        <TeamSection 
-          title="Leadership" 
-          members={getLeadershipTeam()} 
-          className="mb-16"
-        />
-        
-        {/* Technical Team */}
-        <TeamSection 
-          title="Technical Team" 
-          members={getTechnicalTeam()} 
-          className="mb-16"
-        />
-        
-        {/* Administrative Team */}
-        <TeamSection 
-          title="Administrative Team" 
-          members={getAdministrativeTeam()} 
-          className="mb-16"
-        />
-        
-        {/* Marketing Team */}
-        <TeamSection 
-          title="Marketing Team" 
-          members={getMarketingTeam()} 
-        />
-      </div>
-    </div>
-  );
-};
 
 const TeamSection = ({ title, members, className = '' }) => {
   return (
@@ -90,6 +58,45 @@ const TeamSection = ({ title, members, className = '' }) => {
         ))}
       </div>
     </section>
+  );
+};
+
+const TeamPage = () => {
+  return (
+    <div className="bg-gray-900 text-white min-h-screen py-16">
+      <div className="container mx-auto px-4">
+        <h1 className="text-4xl font-bold text-center mb-16">
+          Our <span className="text-cyan-400">Team</span>
+        </h1>
+        
+        {/* Leadership Team */}
+        <TeamSection 
+          title="Leadership" 
+          members={getLeadershipTeam()} 
+          className="mb-16"
+        />
+        
+        {/* Technical Team */}
+        <TeamSection 
+          title="Technical Team" 
+          members={getTechnicalTeam()} 
+          className="mb-16"
+        />
+        
+        {/* Administrative Team */}
+        <TeamSection 
+          title="Administrative Team" 
+          members={getAdministrativeTeam()} 
+          className="mb-16"
+        />
+        
+        {/* Marketing Team */}
+        <TeamSection 
+          title="Marketing Team" 
+          members={getMarketingTeam()} 
+        />
+      </div>
+    </div>
   );
 };
 

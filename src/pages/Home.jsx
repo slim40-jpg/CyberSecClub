@@ -2,6 +2,7 @@
 import { events} from '../data';
 import EventCard from '../components/EventCard';
 import Navbar from '../components/NavBar';
+import Footer from '../components/Footer';
 
 const Home = () => {
   // Get featured events (first 3 or any filtering logic you want)
@@ -28,6 +29,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      <Footer>
+        
+      </Footer>
 
     </div>
   );

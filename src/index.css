@@ -15,9 +15,16 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  color: #333;
+  margin: 0;
+  background: linear-gradient(90deg, 
+    #031e39 0%,    /* Dark blue (left) */
+    #01182f 30%,   /* Slightly lighter blue */
+    #3f120d 100%   /* Red (right) */
+  );
+  background-attachment: fixed; /* Ensures gradient covers entire page */
+  min-height: 100vh;
+  color: white; /* Default text color */
+  font-family: 'Segoe UI', sans-serif;
 }
 
 .container {
@@ -45,26 +52,68 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+h1 , h2 {
+  /* ... other styles ... */
+  background: linear-gradient(90deg, 
+    #2c3e50 0%,      /* Dark blue */
+    #e74c3c 100%     /* Red */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+h3 {
+  background: linear-gradient(90deg, 
+    #06325f 50%,      /* Dark blue */
+    #3b0802 100%     /* Red */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
 /* Brand */
 .brand-link {
-  display: flex;
-  align-items: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: #22d3ee; /* cyan-400 */
-  gap: 0.3rem;
-  transition: color 0.3s ease;
+  /* ... other styles ... */
+  background: linear-gradient(90deg, 
+    #2c3e50 0%,      /* Dark blue */
+    #e74c3c 100%     /* Red */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
-.brand-cybersec {
-  color: white;
+div.flex {
+    margin: 30px;
+}
+svg {
+  margin: 5px;
+  color: #054e98;
+  margin-top: 30px;
+}
+svg:hover {
+  color: #660101;
 }
 
+.brand-cybersec {
+  background: linear-gradient(90deg, 
+    #2c3e50 0%,      /* Dark blue */
+    #e74c3c 100%     /* Red */
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent
+}
+div p {
+  color: #991304;
+  font-size: 20px;
+  margin-top: 10px;
+  padding-top: 10px;
+}
 /* Desktop Navigation */
 .nav-links {
   display: none;
 }
+
 @media (min-width: 768px) {
   .nav-links {
     display: flex;
@@ -140,7 +189,7 @@ body {
   display: block;
   background: none;
   border: none;
-  color: white;
+  color: #450000;
 }
 @media (min-width: 768px) {
   .mobile-menu-toggle {
@@ -190,27 +239,37 @@ body {
 /* Button styles */
 .btn {
   display: inline-block;
-  background-color: #3498db;
-  color: white;
+  background: linear-gradient(90deg, 
+    #2c3e50 30%,      /* Dark blue */
+    #e74c3c 100%     /* Red */
+  );
+  color: #03010f;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s;
+  transition: background-color 2s;
+  margin-top: 30px;
 }
 
 .btn:hover {
-  background-color: #2980b9;
+  background: #e74c3c;
 }
 
 /* Card styles */
 .event-card, .member-card {
-  background: white;
+  background: linear-gradient(90deg, 
+    #2c3e50 30%,      /* Dark blue */
+    #e74c3c 100%     /* Red */
+  );
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.3s;
 }
 
+.event-card, .member-card p {
+      color: #330000;
+}
 .event-card:hover, .member-card:hover {
   transform: translateY(-5px);
 }

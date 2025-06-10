@@ -3,7 +3,7 @@ const members = [
     id: 1,
     name: "Slim Selmi",
     position: "Chair",
-    image: "assets/images/members/slim_selmi.jpg",
+    image: "/members/slim_selmi.jpg",
     bio: "Overall responsibility for the club, strategic planning and external relations",
     fb: "https://www.facebook.com/salyme.selmi",
     insta: "https://www.instagram.com/selmislim14/",
@@ -14,7 +14,7 @@ const members = [
     id: 2,
     name: "Sourour Jawadi",
     position: "Vice-Chair",
-    image: "/assets/images/members/sourour_jaouadi.jpg",
+    image: "/members/sourour_jaouadi.jpg",
     bio: "Supports the Chair and takes responsibility in their absence",
     fb: "https://www.facebook.com/sourour.jawadi",
     insta: "https://www.instagram.com/sourour_jawadi_/",
@@ -23,43 +23,43 @@ const members = [
   },
   // Technical Team (3 members)
   {
-    id: 3,
+    id: 4,
     name: "Zayd Ben Fadhel",
     position: "Technical Lead",
-    image: "/assets/images/members/zayd_bf.jpg",
+    image: "/members/zayd_bf.jpg",
     bio: "Leads technical workshops and cybersecurity training sessions",
     fb: "https://www.facebook.com/zayd.benfadhel",
     insta: "https://www.instagram.com/zaydbenfathel/",
     linkedin: "https://www.linkedin.com/in/zaydbenfadhel/",
-    github: "https://github.com/ahmedtk"
+    github: "https://github.com/"
   },
   {
-    id: 4,
+    id: 3,
     name: "Ghassen Dallegi",
     position: "Technical Member",
-    image: "assets/images/members/ghassen_dallegi.jpg",
+    image: "/members/ghassen_dallegi.jpg",
     bio: "Specializes in network security and penetration testing",
-    fb: "https://facebook.com/lina.marzouk",
-    insta: "https://instagram.com/lina.mz",
-    linkedin: "https://linkedin.com/in/lina-marzouk",
-    github: "https://github.com/linamz"
+    fb: "https://www.facebook.com/ghassen.dalleji.2025",
+    insta: "https://www.instagram.com/ghassen5817/",
+    linkedin: "https://www.linkedin.com/in/ghassen-dalleji-742028343/",
+    github: "https://github.com/"
   },
   {
     id: 5,
-    name: "Karim Bouazizi",
+    name: "Med Yessine Aifa",
     position: "Technical Member",
-    image: "/images/members/tech3.jpg",
+    image: "/members/med_yassine_aifa.jpg",
     bio: "Focuses on cryptography and secure software development",
-    fb: "https://facebook.com/karim.bouazizi",
+    fb: "https://www.facebook.com/med.yessine.aifa",
     insta : "https://instagram.com/amira.chen",
     linkedin: "https://linkedin.com/in/karim-bouazizi",
     github: "https://github.com/karimbz"
   },
   {
     id: 6,
-    name: "Amira Chennoufi",
+    name: "Talel Khemiri",
     position: "General Secretary",
-    image: "/images/members/secretary.jpg",
+    image: "/members/talel_khemiri.jpg",
     bio: "Manages club documentation, minutes, and official records",
     fb: "https://facebook.com/amira.chennoufi",
     insta: "https://instagram.com/amira.chen",
@@ -68,9 +68,20 @@ const members = [
   },
   {
     id: 7,
-    name: "Youssef Hammami",
+    name: "Med Yassine Amri",
+    position: "Treasurer",
+    image: "/members/yessine_amri.jpg",
+    bio: "Manages club documentation, minutes, and official records",
+    fb: "https://facebook.com/amira.chennoufi",
+    insta: "https://instagram.com/amira.chen",
+    linkedin: "https://linkedin.com/in/amira-chennoufi",
+    github: "https://github.com/youssefhm"
+  },
+  {
+    id: 8,
+    name: "Nour Ben Abdejlil",
     position: "RH (Human Resources)",
-    image: "/images/members/rh.jpg",
+    image: "/members/nour_ba.jpg",
     bio: "Handles member relations, recruitment and team coordination",
     fb: "https://facebook.com/youssef.hammami",
     insta: "https://instagram.com/youssef.hm",
@@ -78,10 +89,10 @@ const members = [
     github: "https://github.com/youssefhm"
   },
   {
-    id: 8,
-    name: "Nour Haddad",
+    id: 9,
+    name: "Mohamed Aziz Saoudi",
     position: "RP (Public Relations)",
-    image: "/images/members/rp.jpg",
+    image: "/members/aziz_saoudi.jpg",
     bio: "Manages external communications and partnerships",
     fb: "https://facebook.com/nour.haddad",
     insta: "https://instagram.com/nour.haddad",
@@ -89,10 +100,10 @@ const members = [
     github: "https://github.com/youssefhm"
   },
   {
-    id: 9,
-    name: "Samir Trabelsi",
+    id: 10,
+    name: "Aziz Karray",
     position: "Design Manager",
-    image: "/images/members/design.jpg",
+    image: "/members/aziz_karray.jpg",
     bio: "Creates visual content, logos and event materials",
     fb: "https://facebook.com/samir.trabelsi",
     insta: "https://instagram.com/samir.design",
@@ -100,10 +111,10 @@ const members = [
     github: "https://github.com/samirtr"
   },
   {
-    id: 10,
-    name: "Leila Abid",
+    id: 11,
+    name: "Amina Kallel",
     position: "Media Manager",
-    image: "/images/members/media.jpg",
+    image: "/members/amina_kallel.jpg",
     bio: "Handles social media accounts and content strategy",
     fb: "https://facebook.com/leila.abid",
     insta: "https://instagram.com/leila.media",
@@ -124,7 +135,7 @@ export const getTechnicalTeam = () => members.filter(member =>
   member.position.includes("Technical")
 );
 export const getAdministrativeTeam = () => members.filter(member => 
-  ["General Secretary", "RH", "RP"].includes(member.position)
+  ["General Secretary", "Treasurer", "RH", "RP"].includes(member.position)
 );
 export const getMarketingTeam = () => members.filter(member => 
   ["Design Manager", "Media Manager"].includes(member.position)

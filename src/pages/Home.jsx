@@ -10,7 +10,6 @@ const Home = () => {
   
   return (
     <div className="home-page">
-      <Navbar></Navbar>
       <section className="hero">
         <div className="container">
           <h1>Welcome to Cybersecurity Club</h1>
@@ -29,8 +28,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+      
       <Footer>
-        
+
       </Footer>
 
     </div>

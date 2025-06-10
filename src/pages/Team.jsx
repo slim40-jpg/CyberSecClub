@@ -1,11 +1,10 @@
-import { 
-  FaLinkedin, 
-  FaGithub, 
-  FaTwitter, 
-  FaInstagram 
+import {
+  FaLinkedin,
+  FaGithub,
+  FaTwitter,
+  FaInstagram
 } from 'react-icons/fa';
 
-import members from '../data/members';
 import {
   getLeadershipTeam,
   getTechnicalTeam,
@@ -13,91 +12,65 @@ import {
   getMarketingTeam
 } from '../data/members';
 
-const TeamSection = ({ title, members, className = '' }) => {
-  return (
-    <section className={className}>
-      <h2 className="text-2xl font-bold mb-8 text-cyan-400">{title}</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {members.map(member => (
-          <div key={member.id} className="bg-gray-800 rounded-lg p-6 hover:bg-gray-700 transition">
-            <div className="flex flex-col items-center text-center">
-              <img 
-                src={member.image} 
-                alt={member.name} 
-                className="w-32 h-32 rounded-full object-cover border-2 border-cyan-400 mb-4"
-              />
-              <h3 className="text-xl font-bold">{member.name}</h3>
-              <p className="text-cyan-400 mb-1">{member.position}</p>
-              <p className="text-gray-400 text-sm mb-3">{member.major} - {member.year}</p>
-              <p className="text-gray-300 mb-4">{member.bio}</p>
-              
-              <div className="flex space-x-3">
-                {member.linkedin && (
-                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500">
-                    <FaLinkedin size={20} />
-                  </a>
-                )}
-                {member.github && (
-                  <a href={member.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-gray-100">
-                    <FaGithub size={20} />
-                  </a>
-                )}
-                {member.twitter && (
-                  <a href={member.twitter} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-400">
-                    <FaTwitter size={20} />
-                  </a>
-                )}
-                {member.instagram && (
-                  <a href={member.instagram} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500">
-                    <FaInstagram size={20} />
-                  </a>
-                )}
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  );
-};
+const MemberCard = ({ member }) => (
+  <div className="member-card">
+    <div className="member-content">
+      <img
+        src={member.image}
+        alt={member.name}
+        className="member-image"
+      />
+      <h3 className="member-name">{member.name}</h3>
+      <p className="member-position">{member.position}</p>
+      <p className="member-info">{member.major} - {member.year}</p>
+      <p className="member-bio">{member.bio}</p>
 
-const TeamPage = () => {
-  return (
-    <div className="bg-gray-900 text-white min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-16">
-          Our <span className="text-cyan-400">Team</span>
-        </h1>
-        
-        {/* Leadership Team */}
-        <TeamSection 
-          title="Leadership" 
-          members={getLeadershipTeam()} 
-          className="mb-16"
-        />
-        
-        {/* Technical Team */}
-        <TeamSection 
-          title="Technical Team" 
-          members={getTechnicalTeam()} 
-          className="mb-16"
-        />
-        
-        {/* Administrative Team */}
-        <TeamSection 
-          title="Administrative Team" 
-          members={getAdministrativeTeam()} 
-          className="mb-16"
-        />
-        
-        {/* Marketing Team */}
-        <TeamSection 
-          title="Marketing Team" 
-          members={getMarketingTeam()} 
-        />
+      <div className="member-socials">
+        {member.linkedin && (
+          <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+            <FaLinkedin />
+          </a>
+        )}
+        {member.github && (
+          <a href={member.github} target="_blank" rel="noopener noreferrer">
+            <FaGithub />
+          </a>
+        )}
+        {member.twitter && (
+          <a href={member.twitter} target="_blank" rel="noopener noreferrer">
+            <FaTwitter />
+          </a>
+        )}
+        {member.instagram && (
+          <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+            <FaInstagram />
+          </a>
+        )}
       </div>
     </div>
-  );
-};
+  </div>
+);
+
+const TeamSection = ({ title, members }) => (
+  <section className="team-section">
+    <h2 className="team-title">{title}</h2>
+    <div className="team-grid">
+      {members.map(member => (
+        <MemberCard key={member.id} member={member} />
+      ))}
+    </div>
+  </section>
+);
+
+const TeamPage = () => (
+  <div className="team-page">
+    <h1 className="main-title">CYBER <span>SECURITY TEAM</span></h1>
+
+    <TeamSection title="Leadership" members={getLeadershipTeam()} />
+    <TeamSection title="Technical Team" members={getTechnicalTeam()} />
+    <TeamSection title="Management Team" members={getAdministrativeTeam()} />
+    <TeamSection title="Media & Design team" members={getMarketingTeam()} />
+  </div>
+);
 
 export default TeamPage;
